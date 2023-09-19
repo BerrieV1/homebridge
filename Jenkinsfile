@@ -10,17 +10,23 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh ''
+                sh 'npm install'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'npm run deploy'
             }
         }
     }
 
     post {
         success {
-            echo 'Build successful!'
+            echo 'Deployment successful!'
         }
         failure {
-            echo 'Build failed!'
+            echo 'Deployment failed!'
         }
     }
 }
