@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'npm run /bin/homebridge'
+                sh 'npm start'
             }
         }
     }
