@@ -10,20 +10,22 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'npm install'
+                //sh 'npm install'
+                sh 'sudo apt-get install homebridge'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'npm run'
+                //sh 'npm run'
+                sh 'sudo systemctl start homebridge'
             }
         }
     }
 
     post {
         success {
-            echo 'Deployment successful!'
+            echo 'Deployment successfull!'
         }
         failure {
             echo 'Deployment failed!'
