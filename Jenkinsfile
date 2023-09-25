@@ -11,14 +11,14 @@ pipeline {
         stage('Build') {
             steps {
                 //sh 'npm install'
-                sh 'apt-get install homebridge'
+                sh 'sudo apt-get install homebridge'
             }
         }
 
         stage('Deploy') {
             steps {
                 //sh 'npm run'
-                sh 'systemctl start homebridge'
+                sh 'sudo systemctl start homebridge'
             }
         }
     }
